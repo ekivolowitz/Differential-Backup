@@ -45,6 +45,7 @@ public class FileManager {
 	 * getSourcePath() is the setDialogTitle(); statement. 
 	 * @param none
 	 * @return String filePath - a filepath to the selected target directory
+	 * one change.
 	 */	
 	public String getTargetPath()
 	{
