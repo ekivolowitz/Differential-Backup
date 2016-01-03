@@ -4,6 +4,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+
+/*
+ * This class is the Directory object which is the meat and potatoes of what goes
+ * on here. It has a File called folder, that is scanned for its file contents, then
+ * compared with other files to determine which files from the source need to be copied
+ * to the target location.
+ * <p>Bugs: Cannot copy subdirectories correctly.
+ * 
+ * @author: Evan Kivolowitz
+ */
+
+
 public class Directory
 {
 	//Creates a java file (folder) 

@@ -11,7 +11,14 @@
 //////////////////////////////////////////////////////////////////////////////
 
 import java.util.ArrayList;
-
+/*
+ * This class is the main point of entry into the program. It calls
+ * upon other objects which constructs the program for the user to use. 
+ * 
+ * <p>Bugs: Cannot copy contents of subdirectories to other directories.
+ * 
+ * @author Evan Kivolowitz
+ */
 public class Main {
 	/*
 	 * This method is the point of entry for the program.
