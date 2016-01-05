@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import javax.xml.soap.Node;
 
 /*
  * This class is the Directory object which is the meat and potatoes of what goes
@@ -20,6 +23,7 @@ public class Directory
 {
 	//Creates a java file (folder) 
 	File folder;
+	LinkedList<File> folderStructure;
 	
 	
 	//Constructor putting the file in the java project. 
@@ -27,6 +31,7 @@ public class Directory
 	{
 		folder = new File(filePath);
 	}
+
 	
 	/* Description - This method creates two String[] of the contents inside of each
 	 * Directory folder. It the compares the two String[] together and and appends
@@ -42,6 +47,10 @@ public class Directory
 		String[] namesOfTarget = target.folder.list();
 		for(int i = 0; i < namesOfSource.length; i++)
 		{
+			if(this.getFile(namesOfSource[i]).isDirectory())
+			{
+				System.out.println("Is Directory");
+			}
 			boolean contains = compareLists(namesOfSource[i], namesOfTarget);
 			if(!contains)
 			{
