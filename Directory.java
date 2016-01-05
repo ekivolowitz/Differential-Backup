@@ -47,9 +47,10 @@ public class Directory
 		String[] namesOfTarget = target.folder.list();
 		for(int i = 0; i < namesOfSource.length; i++)
 		{
+			//this will likely need a tree of some sort. 
 			if(this.getFile(namesOfSource[i]).isDirectory())
 			{
-				System.out.println("Is Directory");
+				System.out.println(namesOfSource[i] + " Is Directory");
 			}
 			boolean contains = compareLists(namesOfSource[i], namesOfTarget);
 			if(!contains)
@@ -61,6 +62,7 @@ public class Directory
 		
 		return notContained;
 	}
+	
 	
 	/*
 	 * Description - This method is used to compare the String[] of the target
