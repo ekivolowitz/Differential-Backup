@@ -51,6 +51,16 @@ public class Directory
 			if(this.getFile(namesOfSource[i]).isDirectory())
 			{
 				System.out.println(namesOfSource[i] + " Is Directory");
+<<<<<<< HEAD
+=======
+				ArrayList<Directory> subDirectories = new ArrayList<Directory>();
+				subDirectories = this.getSubDirectoryList();
+				for(int j = 0; j < subDirectories.size(); j++)
+				{
+					System.out.println(subDirectories.get(j).folder.getName());
+				}
+				
+>>>>>>> folder-reading
 			}
 			boolean contains = compareLists(namesOfSource[i], namesOfTarget);
 			if(!contains)
@@ -62,6 +72,29 @@ public class Directory
 		
 		return notContained;
 	}
+	//Does not correctly return the names of the subdirectories or the filepaths.
+	//Will need work tomorrow.
+	private ArrayList<Directory> getSubDirectoryList()
+	{
+		boolean hasSubDirectories = true;
+		String[] files = this.folder.list();
+		ArrayList<Directory> subDirectories = new ArrayList<Directory>();
+		while(hasSubDirectories)
+		{
+			for(int i = 0; i < this.folder.list().length; i++)
+			{
+				if(this.getFile(files[i]).isDirectory())
+				{
+					subDirectories.add(new Directory(this.folder.getAbsolutePath() + "\\" + files[i]));
+				}
+			}
+		}
+		
+		
+		return null;
+	}
+	
+	
 	
 	
 	/*
